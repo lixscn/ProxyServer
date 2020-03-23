@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,10 +6,6 @@
     <StartupObject>Transmit.Program</StartupObject>
     <ApplicationIcon />
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NLog" Version="4.7.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProxyLibrary\ProxyLibrary.csproj" />
