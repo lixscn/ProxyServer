@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transmit", "Transmit\Transmit.csproj", "{198D4144-B03D-4D0C-ACC5-E34F4ED16E4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyLibrary", "ProxyLibrary\ProxyLibrary.csproj", "{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{198D4144-B03D-4D0C-ACC5-E34F4ED16E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{198D4144-B03D-4D0C-ACC5-E34F4ED16E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198D4144-B03D-4D0C-ACC5-E34F4ED16E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
