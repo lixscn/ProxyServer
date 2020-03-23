@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace Transmit
+namespace ProxyLibrary
 {
     public class SocketService
     {
@@ -34,8 +34,16 @@ namespace Transmit
                 //Console.WriteLine(ex.Message);
                 logger.Error(ex.Message);
             }
-
-            Socket listener = new Socket(lep.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            Socket listener = null;
+            try
+            {
+                listener = new Socket(lep.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                logger.Info("服务器启动成功!!");
+            }
+            catch (Exception ex)
+            {
+                logger.Info("服务器启动失败!错误:{0}", ex.Message);
+            }
             try
             {
                 listener.Bind(lep);

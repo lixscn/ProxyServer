@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Transmit
+namespace ProxyLibrary
 {
     public class Logger
     {
