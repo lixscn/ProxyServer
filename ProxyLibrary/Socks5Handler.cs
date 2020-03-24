@@ -20,8 +20,8 @@ namespace ProxyLibrary
                 switch (so.ConnModel)
                 {
                     case CONNMODEL.TRANSMIT:
-                        string host = "185.116.93.67";
-                        Int32 port = 1081;
+                        string host = so.remoteHost;
+                        Int32 port = so.remotePort;
                         ClientConnect(host, port, so);
                         break;
                     case CONNMODEL.PROXY:
@@ -62,7 +62,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format("ClientConnect():{0}", ex.Message));
-                sosv.WriteLog(string.Format("ClientConnect():{0}", ex.Message));
+                sosv.WriteLog(string.Format("ClientConnect():{0},Host = {1},Port = {2}", ex.Message,host,port));
             }
             //return stateObj;
         }

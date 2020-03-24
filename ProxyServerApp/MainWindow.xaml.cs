@@ -121,7 +121,11 @@ namespace ProxyServerApp
             {
                 EnabledServerSteupPanel(true);
                 sks.OnStop();
+                
+                this.statLabel.Content = "服务器停止中";
                 this.ServerStartButton.Content = "服务启动";
+               
+
             }
 
         }

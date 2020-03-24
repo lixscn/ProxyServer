@@ -22,6 +22,7 @@ namespace ProxyLibrary
             ConnModel = connModel;
             RemoteHost = remoteHost;
             RemotePost = remotePost;
+            WriteLog("RemoteHost = {0} RemotePost = {1} ConnModel = {2}", RemoteHost, RemotePost, ConnModel);
         }
 
         public SocketService(string address, Int32 port, CONNMODEL connModel)
@@ -76,7 +77,7 @@ namespace ProxyLibrary
             return bo;
 
         }
-        public bool OnStop()
+        public void OnStop()
         {
             try
             {
@@ -87,7 +88,7 @@ namespace ProxyLibrary
             {
                 listener.Close();
             }
-            return true;
+            
         }
 
         private void AcceptCallback(IAsyncResult ar)
@@ -103,6 +104,10 @@ namespace ProxyLibrary
                 state.ServerSocket = handler;
                 //模式选择0:代理模式，1:转发模式
                 state.ConnModel = ConnModel;
+                if (state.ConnModel == CONNMODEL.TRANSMIT) {
+                    state.remoteHost = RemoteHost;
+                    state.remotePort = RemotePost;
+                }
 
                 //连接到代理服务器并组装ClientSocket到对象类
                 Socks5Handler sh = new Socks5Handler();
