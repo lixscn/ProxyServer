@@ -15,7 +15,10 @@ namespace ProxyLibrary
         public StringBuilder sb = new StringBuilder();
 
         public CONNMODEL ConnModel = CONNMODEL.PROXY;
-        
+        public string remoteHost = "";
+        public Int32 remotePort = 1080;
+
+
         public long Read = 0;
 
         public static long TotelRead = 0;
