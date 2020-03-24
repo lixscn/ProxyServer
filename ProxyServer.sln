@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyLibrary", "ProxyLibrary\ProxyLibrary.csproj", "{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyLibrary", "ProxyLibrary\ProxyLibrary.csproj", "{ACF468F8-542F-4AE2-83D2-CEE5B0ED6AAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{540AAF64-B72D-49C0-BA4A-5D4549C41238}"
 EndProject

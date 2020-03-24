@@ -1,7 +1,6 @@
 ﻿using ProxyLibrary;
 using System;
 
-
 namespace ConsoleApp
 {
     class Program
@@ -9,8 +8,9 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello World!");
-            SocketService sks = new SocketService();
-            sks.OnStart();
+            //SocketService sks = new SocketService();
+            //sks.OnStart();
+
 
             Console.ReadLine();
         }
