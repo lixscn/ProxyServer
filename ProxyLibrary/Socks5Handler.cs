@@ -34,7 +34,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format("ClientConnect(StateObject state):{0}", ex.Message));
-                sosv.WriteLog(string.Format("ClientConnect(StateObject state):{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("ClientConnect(StateObject state):{0}", ex.Message));
             }
             //return stateObj;
         }
@@ -62,7 +62,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format("ClientConnect():{0}", ex.Message));
-                sosv.WriteLog(string.Format("ClientConnect():{0},Host = {1},Port = {2}", ex.Message,host,port));
+                sosv.WriteLogErr(string.Format("ClientConnect():{0},Host = {1},Port = {2}", ex.Message,host,port));
             }
             //return stateObj;
         }
@@ -84,7 +84,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format("GetServerReceiveToClientConnect:{0}", ex.Message));
-                sosv.WriteLog(string.Format("GetServerReceiveToClientConnect():{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("GetServerReceiveToClientConnect():{0}", ex.Message));
             }
             //return stateObj;
         }
@@ -115,7 +115,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format(@"ToClientConnectCallback() --> ERR:{0}", ex.Message));
-                sosv.WriteLog(string.Format("ToClientConnectCallback():{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("ToClientConnectCallback():{0}", ex.Message));
             }
         }
 
@@ -137,7 +137,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format("GetServerReceiveToClientConnect:{0}", ex.Message));
-                sosv.WriteLog(string.Format("GetServerReceiveToClientConnect():{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("GetServerReceiveToClientConnect():{0}", ex.Message));
             }
             //return stateObj;
         }
@@ -185,7 +185,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format(@"ServerSocketBeginSendClientConnectCallback() --> ERR:{0}", ex.Message));
-                sosv.WriteLog(string.Format("ServerSocketBeginSendClientConnectCallback():{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("ServerSocketBeginSendClientConnectCallback():{0}", ex.Message));
             }
         }
 
@@ -208,7 +208,7 @@ namespace ProxyLibrary
             {
                 sosv.Dispose(so);
                 //Console.WriteLine(string.Format(@"ReBeginConnectCallback() --> ERR:{0}", ex.Message));
-                sosv.WriteLog(string.Format("ReBeginConnectCallback():{0}", ex.Message));
+                sosv.WriteLogErr(string.Format("ReBeginConnectCallback():{0}", ex.Message));
             }
         }
 

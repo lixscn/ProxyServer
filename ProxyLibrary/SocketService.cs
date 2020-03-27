@@ -22,7 +22,7 @@ namespace ProxyLibrary
             ConnModel = connModel;
             RemoteHost = remoteHost;
             RemotePost = remotePost;
-            WriteLog("RemoteHost = {0} RemotePost = {1} ConnModel = {2}", RemoteHost, RemotePost, ConnModel);
+            WriteLogErr("RemoteHost = {0} RemotePost = {1} ConnModel = {2}", RemoteHost, RemotePost, ConnModel);
         }
 
         public SocketService(string address, Int32 port, CONNMODEL connModel)
@@ -71,7 +71,7 @@ namespace ProxyLibrary
             catch (Exception ex)
             {
                 //Console.WriteLine(ex.Message);
-                WriteLog(ex.Message);
+                WriteLogErr(ex.Message);
             }
 
             return bo;
@@ -95,9 +95,16 @@ namespace ProxyLibrary
         {
             //获取处理客户端请求的套接字。
             Socket listener = (Socket)ar.AsyncState;
+
+            
+
             try
             {
                 Socket handler = listener.EndAccept(ar);
+
+                WriteLogDebug("I am connected to " + IPAddress.Parse(((IPEndPoint)handler.RemoteEndPoint).Address.ToString()) + "on port number " + ((IPEndPoint)handler.RemoteEndPoint).Port.ToString());
+
+
 
                 //为异步接收创建状态对象。
                 StateObject state = new StateObject();

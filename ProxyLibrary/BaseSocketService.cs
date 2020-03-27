@@ -83,7 +83,7 @@ namespace ProxyLibrary
             {
                 Dispose(so);
                 //Console.WriteLine(string.Format(@"ServerReceiveCallback() --> ERR:{0}", ex.Message));
-                WriteLog(string.Format("ServerReceiveCallback():{0}", ex.Message));
+                WriteLogErr(string.Format("ServerReceiveCallback():{0}", ex.Message));
             }
 
 
@@ -114,7 +114,7 @@ namespace ProxyLibrary
             {
                 Dispose(so);
                 //Console.WriteLine(string.Format(@"ClientSocketSendCallback() --> ERR:{0}", ex.Message));
-                WriteLog(string.Format("ClientSocketSendCallback():{0}", ex.Message));
+                WriteLogErr(string.Format("ClientSocketSendCallback():{0}", ex.Message));
             }
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace ProxyLibrary
             {
                 Dispose(so);
                 //Console.WriteLine(string.Format(@"ClientReceiveCallback():{0}", ex.Message));
-                WriteLog(string.Format("ClientReceiveCallback():{0}", ex.Message));
+                WriteLogErr(string.Format("ClientReceiveCallback():{0}", ex.Message));
             }
         }
         /// <summary>
@@ -175,7 +175,7 @@ namespace ProxyLibrary
             {
                 Dispose(so);
                 //Console.WriteLine(string.Format(@"ServerSocketSendCallback():{0}", ex.Message));
-                WriteLog(string.Format("ServerSocketSendCallback():{0}", ex.Message));
+                WriteLogErr(string.Format("ServerSocketSendCallback():{0}", ex.Message));
             }
         }
 
@@ -225,15 +225,35 @@ namespace ProxyLibrary
             }
         }
 
-        public void WriteLog(string msg, params object[] args)
+        public void WriteLogErr(string msg, params object[] args)
         {
             LOGGER.Error(msg, args);
 
         }
 
-        public void WriteLog(string msg, Exception err)
+        public void WriteLogErr(string msg, Exception err)
         {
             LOGGER.Error(msg, err);
+        }
+        public void WriteLogInfo(string msg, params object[] args)
+        {
+            LOGGER.Info(msg, args);
+
+        }
+
+        public void WriteLogInfo(string msg, Exception err)
+        {
+            LOGGER.Info(msg, err);
+        }
+        public void WriteLogDebug(string msg, params object[] args)
+        {
+            LOGGER.Debug(msg, args);
+
+        }
+
+        public void WriteLogDebug(string msg, Exception err)
+        {
+            LOGGER.Debug(msg, err);
         }
     }
 }

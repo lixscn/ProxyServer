@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HttpServices\HttpServices.csproj" />
     <ProjectReference Include="..\ProxyLibrary\ProxyLibrary.csproj" />
+    <ProjectReference Include="..\UserManager\UserManager.csproj" />
   </ItemGroup>
 
   <ItemGroup>
