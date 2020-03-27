@@ -46,7 +46,7 @@ namespace HttpServices
         private void RequestPOST(ExecutingDispatchToByte action)
         {
             string dataString = GetDatas();
-
+             
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"接收数据完成:{dataString.Trim()},时间：{DateTime.Now.ToString()}");
             //return $"接收数据完成";
