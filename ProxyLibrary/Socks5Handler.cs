@@ -102,6 +102,8 @@ namespace ProxyLibrary
                 {
                     //Console.WriteLine(so.buffer[0]);
                     byte[] bytes = so.buffer;
+                    //要先处理VMess加密封包数据
+
                     if (bytes[0] == 0x05)  //处理SOCKET5
                     {
                         //Console.WriteLine("进入0x05");

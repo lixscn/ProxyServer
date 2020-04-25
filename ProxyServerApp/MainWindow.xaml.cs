@@ -63,11 +63,15 @@ namespace ProxyServerApp
         private void transmitRadioChecked(object sender, RoutedEventArgs e)
         {
             proxyRadioIsChecked(false);
+            this.optionGrid.Visibility = Visibility.Hidden;
+            this.remoteGrid.Visibility = Visibility.Visible;
         }
 
         private void proxyRadioChecked(object sender, RoutedEventArgs e)
         {
             proxyRadioIsChecked(true);
+            this.optionGrid.Visibility = Visibility.Visible;
+            this.remoteGrid.Visibility = Visibility.Hidden;
         }
 
         private void ServerStartButtonClick(object sender, RoutedEventArgs e)
@@ -136,6 +140,8 @@ namespace ProxyServerApp
             this.ServerIPTextBox.IsEnabled = bo;
             this.ServerPortLabel.IsEnabled = bo;
             this.ServerPortTextBox.IsEnabled = bo;
+            this.proxyRadio.IsEnabled = bo;
+            this.transmitRadio.IsEnabled = bo;
             if (this.proxyRadio.IsChecked == false) {
                 this.remoteLabel.IsEnabled = bo;
                 this.remoteTextBox.IsEnabled = bo;
@@ -144,6 +150,17 @@ namespace ProxyServerApp
             }
             
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewGuidToString();
+        }
+
+        public void NewGuidToString()
+        {
+            string id = System.Guid.NewGuid().ToString();
+            this.UUIDTextBox.Text = id;
         }
     }
 }

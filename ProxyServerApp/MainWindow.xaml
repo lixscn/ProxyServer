@@ -5,24 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProxyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="350" MaxHeight="200" MinHeight="200" MaxWidth="350" MinWidth="350" 
-        ResizeMode="NoResize"  ContentRendered="ContentRensered_init" SizeToContent="Manual" WindowState="Normal">
+        Title="MainWindow" Height="220" Width="380" MaxHeight="220" MinHeight="220" MaxWidth="380" MinWidth="380" 
+        ResizeMode="CanMinimize"  ContentRendered="ContentRensered_init" SizeToContent="Manual" WindowState="Normal">
     <Grid>
         <GroupBox Header="服务设置" Margin="5,0,5,5">
-            <Grid Height="153" VerticalAlignment="Center" Margin="15,0,15,0">
-                <Label x:Name="ServerIPLabel" Content="服务IP：" HorizontalAlignment="Left" Margin="11,17,0,0" VerticalAlignment="Top" Height="24"/>
-                <Label Content="服务模式：" HorizontalAlignment="Left" Margin="11,46,0,0" VerticalAlignment="Top"/>
-                <RadioButton x:Name="proxyRadio" Content="代理模式" HorizontalAlignment="Left" Margin="81,52,0,0" VerticalAlignment="Top" GroupName="model" Checked="proxyRadioChecked"/>
-                <RadioButton x:Name="transmitRadio" Content="转发模式" HorizontalAlignment="Left" Margin="158,52,0,0" VerticalAlignment="Top" GroupName="model" Checked="transmitRadioChecked"/>
-                <Label x:Name="remoteLabel" Content="远程IP：" HorizontalAlignment="Left" Margin="11,78,0,0" VerticalAlignment="Top" Height="24"/>
-                <TextBox x:Name="ServerIPTextBox" HorizontalAlignment="Left" Margin="63,20,0,0" Text="127.0.0.1" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="18"/>
-                <TextBox x:Name="remoteTextBox" HorizontalAlignment="Left" Margin="63,81,0,0" Text="185.116.93.67" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Height="18"/>
-                <Label x:Name="ServerPortLabel" Content="服务IP：" HorizontalAlignment="Left" Margin="168,17,0,0" VerticalAlignment="Top" Height="24"/>
-                <Label x:Name="remotePortLabel" Content="远程IP：" HorizontalAlignment="Left" Margin="168,78,0,0" VerticalAlignment="Top" Height="24"/>
-                <TextBox x:Name="ServerPortTextBox" HorizontalAlignment="Left" Margin="225,20,0,0" Text="5556" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" Height="18" RenderTransformOrigin="-0.083,0.722"/>
-                <TextBox x:Name="remotePortTextBox" HorizontalAlignment="Left" Margin="225,81,0,0" Text="1080" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" Height="18" RenderTransformOrigin="0.5,-0.167"/>
-                <Button x:Name="ServerStartButton" Content="服务启动" HorizontalAlignment="Left" Margin="221,104,0,0" VerticalAlignment="Top" Height="22" Click="ServerStartButtonClick"/>
-                <Label x:Name="statLabel" Content="服务器未启动" HorizontalAlignment="Left" Margin="11,107,0,0" VerticalAlignment="Top" Width="181"/>
+            <Grid Height="180" VerticalAlignment="Top" Margin="0,0,0,0">
+                <Grid Height="30" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Stretch">
+                    <Label x:Name="ServerIPLabel" Content="服务IP：" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Center" Height="24"/>
+                    <TextBox x:Name="ServerIPTextBox" HorizontalAlignment="Left" Margin="63,0,0,0" Text="127.0.0.1" TextWrapping="Wrap" VerticalAlignment="Center" Width="103" Height="18"/>
+                    <TextBox x:Name="ServerPortTextBox" HorizontalAlignment="Left" Margin="225,0,0,0" Text="5556" TextWrapping="Wrap" VerticalAlignment="Center" Width="48" Height="18" RenderTransformOrigin="-0.083,0.722"/>
+                    <Label x:Name="ServerPortLabel" Content="服务IP：" HorizontalAlignment="Left" Margin="168,0,0,0" VerticalAlignment="Center" Height="24"/>
+                </Grid>
+                <Grid Height="24" VerticalAlignment="Top" Margin="0,45,20,0" HorizontalAlignment="Stretch">
+                    <Label Content="服务模式：" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Center"/>
+                    <RadioButton x:Name="proxyRadio" Content="代理模式" HorizontalAlignment="Left" Margin="81,0,0,0" VerticalAlignment="Center" GroupName="model" Checked="proxyRadioChecked"/>
+                    <RadioButton x:Name="transmitRadio" Content="转发模式" HorizontalAlignment="Left" Margin="158,0,0,0" VerticalAlignment="Center" GroupName="model" Checked="transmitRadioChecked"/>
+                </Grid>
+                <Grid Height="30" VerticalAlignment="Top" Margin="0,73,0,0" Name="remoteGrid" Visibility="Hidden">
+                    <Label x:Name="remoteLabel" Content="远程IP：" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Margin="10,0,0,0"/>
+                    <Label x:Name="remotePortLabel" Content="远程IP：" HorizontalAlignment="Left" Margin="167,0,0,0" VerticalAlignment="Center" Height="24"/>
+                    <TextBox x:Name="remoteTextBox" HorizontalAlignment="Left" Margin="62,0,0,0" Text="185.0.93.67" TextWrapping="Wrap" VerticalAlignment="Center" Width="103" Height="18"/>
+                    <TextBox x:Name="remotePortTextBox" HorizontalAlignment="Left" Margin="224,0,0,0" Text="1080" TextWrapping="Wrap" VerticalAlignment="Center" Width="48" Height="18" RenderTransformOrigin="0.5,-0.167"/>
+                </Grid>
+                <Grid Height="55" VerticalAlignment="Top" Margin="0,70,0,0" Name="optionGrid" >
+                    <Label x:Name="securityLabel" Content="加密方式：" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Margin="10,-25,0,0"/>
+                    <RadioButton x:Name="securityNoneRadio" Content="None" HorizontalAlignment="Left" Margin="81,-25,0,0" VerticalAlignment="Center" GroupName="security"/>
+                    <RadioButton x:Name="securityAesRadio" Content="aes-128-gcm" HorizontalAlignment="Left" Margin="158,-25,0,0" VerticalAlignment="Center" GroupName="security" IsChecked="True"/>
+                    <Label x:Name="UUIDLabel" Content="UUID：" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Margin="10,28,0,0"/>
+                    <TextBox x:Name="UUIDTextBox" HorizontalAlignment="Left" Margin="52,31,0,0" Text="92c4c1e9-57e6-4c1b-9914-faa5ac26608f" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Height="18"/>
+                    <Button Content="生成" HorizontalAlignment="Left" Margin="315,30,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+                </Grid>
+                <Button x:Name="ServerStartButton" Content="服务启动" HorizontalAlignment="Left" Margin="250,130,0,0" VerticalAlignment="Top" Height="22" Click="ServerStartButtonClick"/>
+                <Label x:Name="statLabel" Content="服务器未启动" HorizontalAlignment="Left" Margin="11,130,0,0" VerticalAlignment="Top" Width="181" Height="24"/>
             </Grid>
         </GroupBox>
     </Grid>
